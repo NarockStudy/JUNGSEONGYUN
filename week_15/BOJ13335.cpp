@@ -9,7 +9,7 @@ int main()
 
     int n, w, L;
     cin >> n >> w >> L;
-    queue<int> q1, q2;  //q1은 대기, q2가 다리
+    queue<int> q1, q2;  //q1은 대기, q2가 다리 
     int ans = 0, q2w = 0, q2L=0;    //w가 다리길이, L이 하중
     //q1대기열 채우기
     for (int i = 0; i < n; i++) {
