@@ -8,7 +8,7 @@ int board[52][52];
 int ans=40000;
 vector<pair<int,int>> h, c_in, c_sel;
 
-//거리계산
+//거리계산 
 int cal_dist(int r1, int c1, int r2, int c2){
     int dist=abs(r1-r2)+abs(c1-c2);
     return dist;
