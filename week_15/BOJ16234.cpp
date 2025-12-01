@@ -8,13 +8,12 @@ int board[52][52];
 int dx[4]={1,0,-1,0};
 int dy[4]={0,1,0,-1};
 bool vis[52][52];
-
+ 
 int bfs(){
     int ans=0;
-    bool chk=true; //변화 없음 감지용
     while(1){
         fill(&vis[0][0],&vis[0][0]+sizeof(vis),false);
-        chk=false;
+        bool chk=false; //변화 없음 감지용
 
         for(int i=0;i<N;i++){
             for(int j=0;j<N;j++){
@@ -30,10 +29,10 @@ int bfs(){
                         auto [x,y]=q.front();
                         q.pop();
                         for(int dir=0;dir<4;dir++){
-                            int nx=i+dx[dir];
-                            int ny=j+dy[dir];
+                            int nx=x+dx[dir];
+                            int ny=y+dy[dir];
                             if(nx>=0 && nx<N && ny>=0 && ny<N && !vis[nx][ny]){
-                                int a=board[i][j];
+                                int a=board[x][y];
                                 int b=board[nx][ny];
                                 int ab=abs(a-b);
                                 if(L<=ab && ab<=R){
